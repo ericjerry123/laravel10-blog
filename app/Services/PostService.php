@@ -3,6 +3,7 @@
 namespace App\Services;
 
 use App\Repositories\PostRepository;
+use Illuminate\Database\Eloquent\ModelNotFoundException;
 
 class PostService
 {
@@ -16,5 +17,14 @@ class PostService
     public function getAllPosts()
     {
         return $this->postRepository->getAllPosts();
+    }
+
+    public function getPost(int $id)
+    {
+        $post = $this->postRepository->findById($id);
+
+        if (!$post) throw new ModelNotFoundException("找不到 Post");
+
+        return $post;
     }
 }

@@ -20,4 +20,11 @@ class PostController extends Controller
 
         return view('posts.index', compact('posts'));
     }
+
+    public function show(Post $post)
+    {
+        $post = $this->postService->getPost($post->id);
+
+        return view('posts.show', compact('post'));
+    }
 }
