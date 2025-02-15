@@ -18,6 +18,6 @@ class PostController extends Controller
     {
         $posts = $this->postService->getAllPosts();
 
-        return response()->json($posts);
+        return view('posts.index', compact('posts'));
     }
 }
