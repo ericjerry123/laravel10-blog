@@ -29,3 +29,5 @@ Route::post('/register', [AuthController::class, 'register'])->name('register');
 
 Route::get('/login', [AuthController::class, 'loginView'])->name('login.view');
 Route::post('/login', [AuthController::class, 'login'])->name('login');
+
+Route::delete('/logout', [AuthController::class, 'logout'])->name('logout');
