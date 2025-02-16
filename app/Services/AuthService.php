@@ -3,6 +3,7 @@
 namespace App\Services;
 
 use App\Repositories\AuthRepository;
+use Illuminate\Support\Facades\Auth;
 
 class AuthService
 {
@@ -21,5 +22,16 @@ class AuthService
     public function login(array $data)
     {
         return $this->authRepository->login($data);
+    }
+
+    public function logout()
+    {
+        Auth::logout();
+
+        request()->session()->invalidate();
+
+        request()->session()->regenerateToken();
+
+        return redirect()->route('posts.index');
     }
 }

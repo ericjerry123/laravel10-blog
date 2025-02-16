@@ -44,4 +44,11 @@ class AuthController extends Controller
 
         return redirect()->route('posts.index');
     }
+
+    public function logout()
+    {
+        $this->authService->logout();
+
+        return redirect()->route('posts.index');
+    }
 }
