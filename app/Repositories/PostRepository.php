@@ -17,4 +17,13 @@ class PostRepository
     {
         return Post::find($id);
     }
+
+    public function createPost(array $data)
+    {
+        return Post::create([
+            'title' => $data['title'],
+            'content' => $data['content'],
+            'user_id' => 21,
+        ]);
+    }
 }
