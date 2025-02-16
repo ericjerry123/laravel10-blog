@@ -17,4 +17,9 @@ class AuthService
     {
         $this->authRepository->register($data);
     }
+
+    public function login(array $data)
+    {
+        return $this->authRepository->login($data);
+    }
 }
