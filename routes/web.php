@@ -26,3 +26,6 @@ Route::post('/posts', [PostController::class, 'store'])->name('posts.store');
 
 Route::get('/register', [AuthController::class, 'registerView'])->name('register.view');
 Route::post('/register', [AuthController::class, 'register'])->name('register');
+
+Route::get('/login', [AuthController::class, 'loginView'])->name('login.view');
+Route::post('/login', [AuthController::class, 'login'])->name('login');
