@@ -3,7 +3,7 @@
         <a href="/" class="btn btn-ghost text-xl">Blog</a>
     </div>
     <div class="flex-none">
-        <button class="btn btn-primary btn-sm mr-4">新增文章</button>
+        <a href="{{ route('posts.create') }}" class="btn btn-primary btn-sm mr-4">新增文章</a>
         <div class="dropdown dropdown-end">
             <div tabindex="0" role="button" class="btn btn-ghost btn-circle avatar">
                 <div class="w-10 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
