@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\StorePostRequest;
 use App\Models\Post;
 use App\Services\PostService;
 use Illuminate\Http\Request;
@@ -27,5 +28,17 @@ class PostController extends Controller
         $post = $this->postService->getPost($post->id);
 
         return view('posts.show', compact('post'));
+    }
+
+    public function create()
+    {
+        return view('posts.create');
+    }
+
+    public function store(StorePostRequest $request)
+    {
+        $this->postService->createPost($request->all());
+
+        return redirect()->route('posts.index');
     }
 }

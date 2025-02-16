@@ -27,4 +27,9 @@ class PostService
 
         return $post;
     }
+
+    public function createPost(array $data)
+    {
+        $this->postRepository->createPost($data);
+    }
 }
