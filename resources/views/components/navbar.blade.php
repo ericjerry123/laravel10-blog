@@ -2,7 +2,7 @@
     <div class="flex-1">
         <a href="/" class="btn btn-ghost text-xl">Blog</a>
     </div>
-    <div class="flex-none">
+    <div class="flex gap-4">
         @auth
             <a href="{{ route('posts.create') }}" class="btn btn-primary btn-sm mr-4">新增文章</a>
 
@@ -13,6 +13,15 @@
                     </div>
                 </div>
             </div>
+
+            <form action="{{ route('logout') }}" method="POST">
+                @csrf
+                @method('DELETE')
+                <button class="btn btn-ghost btn-circle avatar">
+                    <i class="fa-solid fa-right-from-bracket">登出</i>
+                </button>
+            </form>
+
         @endauth
         @guest
             <div class="flex gap-4">
